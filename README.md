@@ -4,6 +4,8 @@ At-least-once delivery is the default in every real queue, so consumers must ded
 
 As of 2026-10-13, no direct equivalent found as of 2026-10-13: idempotency-key specs exist as API conventions, but searches across GitHub (194 queries) and the web found no standalone duplicate-delivery simulator plus declaration linter.
 
+<p align="center"><img src="docs/demo.gif" alt="demo" width="720"></p>
+
 ## Problem
 
 Brokers redeliver. Consumers crash after side effects but before acks. Retries multiply deliveries. Every team learns this the hard way: a charge applied twice, an email sent twice. The consumer *should* have declared a dedup key and a store — but nothing forces that declaration to exist, be complete, or actually work under redelivery until an incident proves it doesn't.
